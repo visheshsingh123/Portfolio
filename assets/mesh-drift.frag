@@ -187,11 +187,12 @@ vec3 shade(vec2 uv, vec2 p, float t) {
     vec2 c = vec2(
       sin(t * (0.21 + fi * 0.071) + fi * 2.4 + u_seed),
       cos(t * (0.17 + fi * 0.093) + fi * 1.7)) * (0.45 + u_intensity * 0.35);
-    float w = exp(-dot(p - c, p - c) * 6.0);
+    float w = exp(-dot(p - c, p - c) * 9.0);
     acc += u_colors[i] * w;
     total += w;
   }
-  return acc / total;
+  // Let the charcoal base emerge between the moving pools of colour.
+  return mix(u_colors[0], acc / total, smoothstep(0.04, 0.90, total - 0.15));
 }
 
 void main() {

@@ -1040,7 +1040,8 @@
     background: radial-gradient(ellipse at 15% 25%, #91421f 0%, transparent 60%),
       radial-gradient(ellipse at 90% 80%, #685244 0%, transparent 55%), #1e1d1b;
   }
-  #mesh-drift { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.72; }
+  .mesh-background.mesh-ready { background: var(--bg); }
+  #mesh-drift { position: absolute; inset: 0; width: 100%; height: 100%; }
   .mesh-background::after {
     content: ''; position: absolute; inset: 0;
     background-image: radial-gradient(rgba(255,252,242,0.10) 0.8px, transparent 0.8px);
@@ -1051,6 +1052,7 @@
     border-inline: 1px solid rgba(255,252,242,0.10);
   }
   body > section { background: rgba(30,29,27,0.94); }
+  body > #hero { background: rgba(30,29,27,0.88); }
   body > #about, body > #projects, body > footer { background: rgba(38,35,32,0.96); }
   body > #contact { background: rgba(30,29,27,0.94); }
   nav { max-width: 1232px; left: 72px; right: 72px; }

@@ -45,10 +45,11 @@
       for (let c = 0; c < 3; c++) palette[i * 3 + c] = parseInt(hex.slice(c * 2, c * 2 + 2), 16) / 255;
     });
     gl.uniform3fv(uniform('u_colors[0]'), palette);
-    gl.uniform4f(uniform('u_shape'), 1.16, 0.34, 0.50, 0.00);
+    // Broader travel keeps the blobs moving through the visible side gutters.
+    gl.uniform4f(uniform('u_shape'), 0.78, 0.65, 0.50, 0.00);
     gl.uniform4f(uniform('u_surface'), 2.40, 1.16, 0.00, 1.00);
     gl.uniform4f(uniform('u_finish'), 0.00, 0.00, 0.000, 0.09);
-    gl.uniform4f(uniform('u_transform'), 1453.0, 0.00, 0.00, 0.0);
+    gl.uniform4f(uniform('u_transform'), 1453.0, 0.00, 0.24, 0.0);
     gl.uniform4f(uniform('u_space'), 0, 0, 0, 0);
     gl.uniform4f(uniform('u_cursor'), 0, 2.0, 0.65, 0.46);
     const scene = uniform('u_scene');
@@ -70,8 +71,9 @@
       }
       if (!reducedMotion.matches && previous !== null) time += Math.min(now - previous, 100) / 1000;
       previous = now;
-      gl.uniform4f(scene, width, height, time * 0.73, 4.0);
+      gl.uniform4f(scene, width, height, time * 1.65, 4.0);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
+      canvas.parentElement.classList.add('mesh-ready');
       if (!reducedMotion.matches) frame = requestAnimationFrame(render);
     }
     function resume() {
@@ -85,10 +87,12 @@
     canvas.addEventListener('webglcontextlost', () => {
       lost = true;
       cancelAnimationFrame(frame);
+      canvas.parentElement.classList.remove('mesh-ready');
       canvas.style.opacity = '0';
     });
     resume();
   } catch (error) {
+    canvas.parentElement.classList.remove('mesh-ready');
     canvas.style.opacity = '0';
     console.warn('Mesh background unavailable; using CSS fallback.', error);
   }
