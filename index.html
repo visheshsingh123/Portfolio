@@ -542,7 +542,7 @@
   }
 
   /* SECTIONS COMMON */
-  section { padding: 7rem 4rem; }
+  section { padding: 4rem 4rem; }
   section > *:not(.section-bg):not(canvas):not(.parallax-bg) {
     max-width: 1200px;
     margin-left: auto;
@@ -568,7 +568,7 @@
     font-size: clamp(2rem, 4vw, 3.2rem);
     color: var(--white);
     letter-spacing: -0.02em;
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
     line-height: 1.1;
   }
 
@@ -577,8 +577,8 @@
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
+    gap: 3rem;
+    align-items: start;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -589,6 +589,7 @@
     margin-bottom: 1.25rem;
   }
   .about-text p strong { color: var(--white); }
+  .about-text p:last-child { margin-bottom: 0; }
   .about-text p .highlight { color: var(--accent); }
   .agency-link { color: var(--accent); text-underline-offset: 4px; }
   .agency-link:hover { color: var(--white); }
@@ -1051,9 +1052,9 @@
     .nav-resume-btn:hover { color: var(--accent); }
     .nav-resume-btn svg { width: 22px; height: 22px; }
     .nav-resume-btn .nav-resume-label { display: none; }
-    section { padding: 5rem 2rem; }
+    section { padding: 3.5rem 2rem; }
     #hero { padding: 6rem 2rem 4rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-top { padding: 2.75rem 0 2rem; }
   }
   @media (max-width: 600px) {
@@ -1096,7 +1097,7 @@
     body > section, body > footer { width: calc(100% - 24px); }
     nav { left: 20px; right: 20px; }
     #hero { padding: 7rem 1.25rem 3rem; }
-    section { padding: 4rem 1.25rem; }
+    section { padding: 3rem 1.25rem; }
     .footer-inner { padding-inline: 1.25rem; }
   }
 
