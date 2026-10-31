@@ -117,18 +117,23 @@
 
   /* NAV */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    position: fixed; top: 16px; left: 24px; right: 24px; z-index: 100;
+    max-width: 1328px;
+    margin: 0 auto;
     display: flex; align-items: center; justify-content: center;
-    padding: 0 4rem;
-    background: rgba(30,29,27,0.92);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    background: linear-gradient(135deg, rgba(255,252,242,0.10), rgba(255,252,242,0.02)), rgba(30,29,27,0.62);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid rgba(255,252,242,0.16);
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,252,242,0.18), inset 0 -1px 0 rgba(255,252,242,0.03);
   }
   .nav-inner {
     width: 100%;
     max-width: 1200px;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 0;
+    padding: 0.9rem 0;
   }
   .nav-logo {
     font-family: var(--mono);
@@ -140,6 +145,10 @@
   .nav-logo span { color: var(--accent2); }
   .nav-logo img { height: 32px; width: auto; display: block; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
+  nav .nav-links a { color: var(--text); }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    nav { background: rgba(30,29,27,0.97); }
+  }
   .nav-links a {
     position: relative;
     font-family: var(--mono);
@@ -1000,7 +1009,7 @@
     .hero-scroll-hint { display: none; }
   }
   @media (max-width: 900px) {
-    nav { padding: 0 2rem; }
+    nav { top: 12px; left: 12px; right: 12px; padding: 0 1.25rem; border-radius: 20px; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     .nav-resume-btn {
@@ -1620,11 +1629,15 @@
     links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
     links.style.flexDirection = 'column';
     links.style.position = 'absolute';
-    links.style.top = '70px';
+    links.style.top = 'calc(100% + 10px)';
     links.style.left = '0'; links.style.right = '0';
-    links.style.background = 'var(--bg2)';
+    links.style.background = 'linear-gradient(135deg, rgba(255,252,242,0.08), rgba(255,252,242,0.02)), rgba(30,29,27,0.92)';
+    links.style.backdropFilter = 'blur(24px) saturate(160%)';
+    links.style.webkitBackdropFilter = 'blur(24px) saturate(160%)';
+    links.style.borderRadius = '20px';
+    links.style.boxShadow = '0 12px 32px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,252,242,0.12)';
     links.style.padding = '1.5rem 2rem';
-    links.style.borderBottom = '1px solid var(--border)';
+    links.style.border = '1px solid rgba(255,252,242,0.16)';
   });
 
   // ===== PROJECT CARD CLICK =====
