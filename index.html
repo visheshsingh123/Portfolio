@@ -58,10 +58,10 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #252422;
-    --bg2: #2e2b28;
-    --bg3: #403d39;
-    --border: #4a4642;
+    --bg: #141312;
+    --bg2: #1c1a18;
+    --bg3: #282522;
+    --border: #34312e;
     --accent: #eb5e28;
     --accent2: #ccc5b9;
     --accent3: #fffcf2;
@@ -92,7 +92,7 @@
     position: fixed;
     right: 2rem; bottom: 2rem;
     width: 42px; height: 42px;
-    background: rgba(37,36,34,0.85);
+    background: rgba(20,19,18,0.85);
     backdrop-filter: blur(8px);
     border: 1px solid var(--border);
     color: var(--muted);
@@ -120,7 +120,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: center;
     padding: 0 4rem;
-    background: rgba(37,36,34,0.92);
+    background: rgba(20,19,18,0.92);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
@@ -319,7 +319,7 @@
   .hero-photo-label {
     position: relative;
     padding: 0.5rem 0.9rem;
-    background: rgba(37,36,34,0.82); backdrop-filter: blur(8px);
+    background: rgba(20,19,18,0.82); backdrop-filter: blur(8px);
     border-top: 1px solid var(--border);
     display: flex; align-items: center; justify-content: space-between;
   }
@@ -670,10 +670,10 @@
   }
 
   /* slide backgrounds, alternating per card */
-  .project-card:nth-child(odd)  .carousel-slide:nth-child(1) { background: linear-gradient(135deg, #2e2b28, #1e1c1a); }
+  .project-card:nth-child(odd)  .carousel-slide:nth-child(1) { background: linear-gradient(135deg, #1c1a18, #121110); }
   .project-card:nth-child(odd)  .carousel-slide:nth-child(2) { background: linear-gradient(135deg, #3a2218, #251510); }
   .project-card:nth-child(odd)  .carousel-slide:nth-child(3) { background: linear-gradient(135deg, #1e2228, #12181e); }
-  .project-card:nth-child(even) .carousel-slide:nth-child(1) { background: linear-gradient(135deg, #333030, #252220); }
+  .project-card:nth-child(even) .carousel-slide:nth-child(1) { background: linear-gradient(135deg, #242222, #171513); }
   .project-card:nth-child(even) .carousel-slide:nth-child(2) { background: linear-gradient(135deg, #2a2030, #1a1220); }
   .project-card:nth-child(even) .carousel-slide:nth-child(3) { background: linear-gradient(135deg, #1e2a1e, #121a12); }
 
@@ -681,7 +681,7 @@
   .carousel-btn {
     position: absolute; top: 50%; transform: translateY(-50%);
     width: 28px; height: 28px;
-    background: rgba(37,36,34,0.75);
+    background: rgba(20,19,18,0.75);
     border: 1px solid rgba(235,94,40,0.3);
     color: var(--accent);
     display: flex; align-items: center; justify-content: center;
@@ -739,7 +739,7 @@
     text-transform: uppercase;
     border: 1px solid rgba(255,252,242,0.6);
     padding: 0.45rem 1.15rem;
-    background: rgba(37,36,34,0.72);
+    background: rgba(20,19,18,0.72);
     backdrop-filter: blur(4px);
     transition: background 0.2s, border-color 0.2s;
   }
