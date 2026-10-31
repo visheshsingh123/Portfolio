@@ -1032,9 +1032,48 @@
     .projects-grid { grid-template-columns: 1fr; }
   }
 
+
+  /* Inset content leaves the animated mesh visible in the side gutters. */
+  body { position: relative; isolation: isolate; }
+  .mesh-background {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(ellipse at 15% 25%, #91421f 0%, transparent 60%),
+      radial-gradient(ellipse at 90% 80%, #685244 0%, transparent 55%), #1e1d1b;
+  }
+  #mesh-drift { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.72; }
+  .mesh-background::after {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,252,242,0.10) 0.8px, transparent 0.8px);
+    background-size: 6px 6px;
+  }
+  body > section, body > footer {
+    width: min(1280px, calc(100% - 96px)); margin-inline: auto;
+    border-inline: 1px solid rgba(255,252,242,0.10);
+  }
+  body > section { background: rgba(30,29,27,0.94); }
+  body > #about, body > #projects, body > footer { background: rgba(38,35,32,0.96); }
+  body > #contact { background: rgba(30,29,27,0.94); }
+  nav { max-width: 1232px; left: 72px; right: 72px; }
+  #hero { padding-top: 8rem; }
+  #hero::before, .hero-glow { display: none; }
+  html { scroll-padding-top: 110px; }
+  @media (max-width: 1000px) {
+    body > section, body > footer { width: calc(100% - 48px); }
+    nav { left: 36px; right: 36px; }
+  }
+  @media (max-width: 600px) {
+    body > section, body > footer { width: calc(100% - 24px); }
+    nav { left: 20px; right: 20px; }
+    #hero { padding: 7rem 1.25rem 3rem; }
+    section { padding: 4rem 1.25rem; }
+    .footer-inner { padding-inline: 1.25rem; }
+  }
+
 </style>
+<script src="assets/mesh-drift.js" defer></script>
 </head>
 <body>
+<div class="mesh-background" aria-hidden="true"><canvas id="mesh-drift"></canvas></div>
 
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
