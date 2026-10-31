@@ -121,7 +121,7 @@
     z-index: 90;
     display: inline-flex; align-items: center; gap: 0.65rem;
     min-height: 54px; padding: 0.9rem 1.3rem;
-    border: 1px solid rgba(255,252,242,0.25); border-radius: 999px;
+    border: 1px solid rgba(255,252,242,0.25); border-radius: 0;
     background: var(--accent); color: #1e1d1b;
     font: 700 0.8rem var(--mono); text-decoration: none;
     box-shadow: 0 6px 24px rgba(235,94,40,0.25);
@@ -1104,12 +1104,12 @@
   .hero-role { font: 600 1rem/1.65 var(--sans); color: var(--text); max-width: 36rem; margin-bottom: 1rem; }
   .hero-role span { margin-inline: 0.3rem; }
   .hero-sub { color: var(--text); }
-  .project-links { flex-wrap: wrap; margin-top: auto; }
+  .project-links { flex-direction: column; margin-top: auto; width: 100%; }
   .project-links a {
-    display: inline-flex; align-items: center; min-height: 44px;
+    display: flex; align-items: center; justify-content: center; width: 100%; min-height: 44px;
     color: var(--white); font: 700 0.78rem var(--mono);
     padding: 0.65rem 0.85rem; border: 1px solid var(--accent);
-    text-decoration: none; border-radius: 4px;
+    text-decoration: none; border-radius: 0;
   }
   .project-links a:hover { background: rgba(235,94,40,0.15); }
   .project-links a:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
@@ -1207,6 +1207,99 @@
   </div>
 
   <div class="hero-scroll-hint">scroll<br></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <div class="section-label">About Me</div>
+   <h2 class="section-title">Design-Minded.<br>Code-Driven.</h2>
+      <p>Hi! I'm <strong>Vishesh Singh</strong>, an IT student who enjoys building intuitive interfaces through <strong>UI/UX, graphic design, and clean code</strong>. I believe good digital experiences should always be <span class="highlight">visually appealing and fun to use</span>.</p>
+<p>I combine a growing eye for visuals with web and game design skills to bring ideas to life. My projects so far span pixel-perfect interfaces, graphic layouts, and small indie games.</p>
+<p>I'm also the founder of <a class="agency-link" href="https://formiqbloom.vercel.app/" target="_blank" rel="noopener noreferrer">FormiqBloom</a>, my web design and development agency.</p>
+<p>Every project I take on starts with one question: <strong>how can I make this both beautiful and easy to use?</strong></p></div>
+    <div>
+      <!-- Toggle -->
+      <div class="edu-cert-toggle">
+        <span class="edu-cert-toggle-label active" id="eduLabel">Education</span>
+        <div class="edu-cert-track" id="eduCertTrack" role="switch" aria-checked="false" tabindex="0" title="Switch between Education and Certifications">
+          <div class="edu-cert-thumb"></div>
+        </div>
+        <span class="edu-cert-toggle-label" id="certLabel">Certifications</span>
+      </div>
+
+      <div class="edu-cert-panels">
+
+        <!-- EDUCATION PANEL -->
+        <div class="timeline-panel" id="eduPanel" style="display: flex; flex-direction: column; gap: 0; position: relative;">
+          <div style="position: absolute; left: 4px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border) 50%, var(--border)); z-index: 0;"></div>
+
+          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
+            <div style="width: 10px; height: 10px; background: var(--accent); position: absolute; left: 0; top: 6px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(235,94,40,0.2); z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;">2025 - Present</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">BSc in Information Technology</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Sarvajanik University, Surat</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Currently deep diving into application development, web infrastructures, and data systems administration.</p>
+          </div>
+
+          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
+            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Class XII - 2025</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">PCM Stream - 70%</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">GSEB Board</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Built analytical foundations in Physics, Chemistry, and Mathematics, optimizing core logical reasoning skills.</p>
+          </div>
+
+          <div style="padding-left: 2.2rem; position: relative;">
+            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Class X - 2023</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Secondary Education - 86%</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">GSEB Board</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Graduated with top distinctions, establishing strong performance habits early on.</p>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS PANEL -->
+        <div class="timeline-panel hidden" id="certPanel" style="display: none; flex-direction: column; gap: 0; position: relative;">
+          <div style="position: absolute; left: 4px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border) 50%, var(--border)); z-index: 0;"></div>
+
+          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
+            <div style="width: 10px; height: 10px; background: var(--accent); position: absolute; left: 0; top: 6px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(235,94,40,0.2); z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">AWS Foundations: Machine Learning Basics</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">AWS Training & Certification</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Completed AWS's introductory training on core machine learning concepts and how they apply within the AWS ecosystem.</p>
+          </div>
+
+          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
+            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Java (Basic): Certificate of Accomplishment</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">HackerRank</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Passed HackerRank's Java (Basic) skill certification test, covering core Java syntax and programming fundamentals.</p>
+          </div>
+
+          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
+            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Python: Certificate of Completion</h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Kaggle</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Completed Kaggle's Python course, covering core syntax, data structures, and programming fundamentals.</p>
+          </div>
+
+          <div style="padding-left: 2.2rem; position: relative;">
+            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 May</span>
+            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">HubSpot Content Marketing Certified </h3>
+            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Hubspot</span>
+            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Certified in leveraging advanced SEO topic clusters and structured content frameworks to maximize audience retention, search visibility, and strategic brand growth</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -1341,99 +1434,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-grid fade-in">
-    <div class="about-text">
-      <div class="section-label">About Me</div>
-   <h2 class="section-title">Design-Minded.<br>Code-Driven.</h2>
-      <p>Hi! I'm <strong>Vishesh Singh</strong>, an IT student who enjoys building intuitive interfaces through <strong>UI/UX, graphic design, and clean code</strong>. I believe good digital experiences should always be <span class="highlight">visually appealing and fun to use</span>.</p>
-<p>I combine a growing eye for visuals with web and game design skills to bring ideas to life. My projects so far span pixel-perfect interfaces, graphic layouts, and small indie games.</p>
-<p>I'm also the founder of <a class="agency-link" href="https://formiqbloom.vercel.app/" target="_blank" rel="noopener noreferrer">FormiqBloom</a>, my web design and development agency.</p>
-<p>Every project I take on starts with one question: <strong>how can I make this both beautiful and easy to use?</strong></p></div>
-    <div>
-      <!-- Toggle -->
-      <div class="edu-cert-toggle">
-        <span class="edu-cert-toggle-label active" id="eduLabel">Education</span>
-        <div class="edu-cert-track" id="eduCertTrack" role="switch" aria-checked="false" tabindex="0" title="Switch between Education and Certifications">
-          <div class="edu-cert-thumb"></div>
-        </div>
-        <span class="edu-cert-toggle-label" id="certLabel">Certifications</span>
-      </div>
-
-      <div class="edu-cert-panels">
-
-        <!-- EDUCATION PANEL -->
-        <div class="timeline-panel" id="eduPanel" style="display: flex; flex-direction: column; gap: 0; position: relative;">
-          <div style="position: absolute; left: 4px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border) 50%, var(--border)); z-index: 0;"></div>
-
-          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
-            <div style="width: 10px; height: 10px; background: var(--accent); position: absolute; left: 0; top: 6px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(235,94,40,0.2); z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;">2025 - Present</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">BSc in Information Technology</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Sarvajanik University, Surat</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Currently deep diving into application development, web infrastructures, and data systems administration.</p>
-          </div>
-
-          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
-            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Class XII - 2025</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">PCM Stream - 70%</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">GSEB Board</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Built analytical foundations in Physics, Chemistry, and Mathematics, optimizing core logical reasoning skills.</p>
-          </div>
-
-          <div style="padding-left: 2.2rem; position: relative;">
-            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">Class X - 2023</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Secondary Education - 86%</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">GSEB Board</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Graduated with top distinctions, establishing strong performance habits early on.</p>
-          </div>
-        </div>
-
-        <!-- CERTIFICATIONS PANEL -->
-        <div class="timeline-panel hidden" id="certPanel" style="display: none; flex-direction: column; gap: 0; position: relative;">
-          <div style="position: absolute; left: 4px; top: 12px; bottom: 12px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border) 50%, var(--border)); z-index: 0;"></div>
-
-          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
-            <div style="width: 10px; height: 10px; background: var(--accent); position: absolute; left: 0; top: 6px; border-radius: 50%; box-shadow: 0 0 0 3px rgba(235,94,40,0.2); z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">AWS Foundations: Machine Learning Basics</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">AWS Training & Certification</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Completed AWS's introductory training on core machine learning concepts and how they apply within the AWS ecosystem.</p>
-          </div>
-
-          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
-            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Java (Basic): Certificate of Accomplishment</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">HackerRank</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Passed HackerRank's Java (Basic) skill certification test, covering core Java syntax and programming fundamentals.</p>
-          </div>
-
-          <div style="padding-left: 2.2rem; position: relative; padding-bottom: 2.5rem;">
-            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 August</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">Python: Certificate of Completion</h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Kaggle</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Completed Kaggle's Python course, covering core syntax, data structures, and programming fundamentals.</p>
-          </div>
-
-          <div style="padding-left: 2.2rem; position: relative;">
-            <div style="width: 10px; height: 10px; background: var(--bg3); border: 2px solid var(--border); position: absolute; left: 0; top: 6px; border-radius: 50%; z-index: 1;"></div>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase;">2026 May</span>
-            <h3 style="font-family: var(--sans); font-weight: 700; font-size: 1.15rem; color: var(--white); margin: 0.3rem 0;">HubSpot Content Marketing Certified </h3>
-            <span style="font-family: var(--mono); font-size: 0.75rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase;">Hubspot</span>
-            <p style="font-size: 0.88rem; line-height: 1.6; color: var(--muted); margin: 0;">Certified in leveraging advanced SEO topic clusters and structured content frameworks to maximize audience retention, search visibility, and strategic brand growth</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
   </div>
 </section>
 
