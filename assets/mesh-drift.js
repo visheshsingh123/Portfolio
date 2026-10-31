@@ -71,7 +71,7 @@
       }
       if (!reducedMotion.matches && previous !== null) time += Math.min(now - previous, 100) / 1000;
       previous = now;
-      gl.uniform4f(scene, width, height, time * 1.65, 4.0);
+      gl.uniform4f(scene, width, height, time * 0.40, 4.0);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       canvas.parentElement.classList.add('mesh-ready');
       if (!reducedMotion.matches) frame = requestAnimationFrame(render);
