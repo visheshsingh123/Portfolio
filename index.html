@@ -66,7 +66,7 @@
     --accent2: #ccc5b9;
     --accent3: #fffcf2;
     --text: #ccc5b9;
-    --muted: #6b6560;
+    --muted: #b4ada3;
     --white: #fffcf2;
     --mono: 'Space Mono', monospace;
     --sans: 'Syne', sans-serif;
@@ -1031,8 +1031,9 @@
     .hero-content { display: contents; }
     .hero-tag { order: 1; justify-self: start; }
     .hero-name { order: 2; }
-    .hero-sub { order: 3; }
-    .hero-photo-slot { order: 4; width: 100%; max-width: 320px; height: auto; margin: 0 auto; }
+    .hero-role { order: 3; }
+    .hero-sub { order: 4; }
+    .hero-photo-slot { order: 6; width: 100%; max-width: 320px; height: auto; margin: 0 auto; }
     .hero-cta { order: 5; }
     .hero-scroll-hint { display: none; }
   }
@@ -1069,7 +1070,7 @@
       radial-gradient(ellipse at 90% 80%, #685244 0%, transparent 55%), #1e1d1b;
   }
   .mesh-background.mesh-ready { background: var(--bg); }
-  #mesh-drift { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #mesh-drift { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.78; }
   .mesh-background::after {
     content: ''; position: absolute; inset: 0;
     background-image: radial-gradient(rgba(255,252,242,0.10) 0.8px, transparent 0.8px);
@@ -1099,6 +1100,29 @@
     .footer-inner { padding-inline: 1.25rem; }
   }
 
+
+  .hero-role { font: 600 1rem/1.65 var(--sans); color: var(--text); max-width: 36rem; margin-bottom: 1rem; }
+  .hero-role span { margin-inline: 0.3rem; }
+  .hero-sub { color: var(--text); }
+  .project-links { flex-wrap: wrap; margin-top: auto; }
+  .project-links a {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: var(--white); font: 700 0.78rem var(--mono);
+    padding: 0.65rem 0.85rem; border: 1px solid var(--accent);
+    text-decoration: none; border-radius: 4px;
+  }
+  .project-links a:hover { background: rgba(235,94,40,0.15); }
+  .project-links a:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+  .project-body { display: flex; flex-direction: column; }
+  .project-tag, .section-label { color: #ff9d73; }
+  .project-contribution { color: var(--text); font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.25rem; }
+  .project-contribution strong { color: var(--white); }
+  @media (max-width: 1000px) {
+    .hero-role { margin-bottom: 0; }
+    .hero-sub { margin-bottom: 0; }
+    .hero-cta { margin-bottom: 0.75rem; }
+  }
+
 </style>
 <script src="assets/mesh-drift.js" defer></script>
 </head>
@@ -1122,9 +1146,9 @@
   <div class="nav-inner">
   <a class="nav-logo" href="#hero"><img src="assets/portlogoclear.png" alt="Vishesh Singh logo"></a>
   <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right-group">
@@ -1149,9 +1173,8 @@
       <h1 class="hero-name">
         Vishesh<span class="accent-line">Singh</span>
       </h1>
-      <p class="hero-sub">
-        Building clean interfaces &amp; solid apps,<br>one project at a time.
-      </p>
+      <p class="hero-role">Developer &amp; Designer <span aria-hidden="true">·</span> Founder of <a class="agency-link" href="https://formiqbloom.vercel.app/" target="_blank" rel="noopener noreferrer">FormiqBloom</a></p>
+      <p class="hero-sub">I build responsive websites, Android apps, and AI-powered tools with thoughtful interfaces.</p>
       <div class="hero-cta">
         <a href="#projects" class="btn-primary">View My Work</a>
         <a href="#contact" class="btn-secondary">Get In Touch</a>
@@ -1184,6 +1207,141 @@
   </div>
 
   <div class="hero-scroll-hint">scroll<br></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label fade-in">Projects</div>
+  <h2 class="section-title fade-in">Selected<br>Work</h2>
+  <div class="projects-grid fade-in">
+
+    <div class="project-card" data-href="https://github.com/visheshsingh123/koincentric" role="link" tabindex="0" aria-label="KoinCentric: Android Expense Tracker">
+  <div class="project-thumb">
+    <div class="carousel" data-index="0">
+      <div class="carousel-track">
+        <div class="carousel-slide" style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:0;overflow:hidden">
+          <img loading="eager" src="assets/k1.png" alt="KoinCentric home dashboard" style="width:100%;height:100%;object-fit:cover;">
+          <span class="carousel-slide-label">Dashboard</span>
+        </div>
+        <div class="carousel-slide" style="background:linear-gradient(135deg,#0c1a2e,#112240);padding:0;overflow:hidden">
+          <img loading="eager" src="assets/k2.png" alt="KoinCentric app screens overview" style="width:100%;height:100%;object-fit:cover;">
+          <span class="carousel-slide-label">App Screens</span>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
+      <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
+      <div class="carousel-dots">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+      </div>
+      <div class="carousel-counter">1 / 2</div>
+    </div>
+    <div class="project-thumb-overlay"><span>View Project →</span></div>
+  </div>
+  <div class="project-body">
+    <div class="project-meta">
+      <span class="project-tag">Kotlin</span>
+      <span class="project-tag">Jetpack Compose</span>
+      <span class="project-tag">Android</span>
+    </div>
+    <h3 class="project-title">KoinCentric: Android Expense Tracker</h3>
+    <p class="project-desc">A lightweight Android expense tracker built with Kotlin and Jetpack Compose, with quick-entry logging and categorized spending tracking.</p>
+    <p class="project-contribution"><strong>My work:</strong> Android interface, quick-entry expense logging, and categorized spending views in Kotlin and Jetpack Compose.</p>
+<div class="project-links">
+<a href="https://github.com/visheshsingh123/koincentric" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
+<div class="project-card" data-href="https://macromuse.vercel.app" role="link" tabindex="0" aria-label="MacroMuse: AI-Powered Personal Dietitian">
+      <div class="project-thumb">
+        <div class="carousel" data-index="0">
+          <div class="carousel-track">
+            <div class="carousel-slide" style="background:linear-gradient(135deg,#0a1a14,#0d2318);padding:0;overflow:hidden">
+              <img loading="eager" src="assets/n1.jpeg" alt="MacroMuse product overview" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">Overview</span>
+            </div>
+            <div class="carousel-slide" style="background:linear-gradient(135deg,#091812,#0b1f16);padding:0;overflow:hidden">
+              <img loading="eager" src="assets/n2.jpeg" alt="MacroMuse dashboard" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">Dashboard</span>
+            </div>
+            <div class="carousel-slide" style="background:linear-gradient(135deg,#0a1a14,#0d2318);padding:0;overflow:hidden">
+              <img loading="eager" src="assets/n3.jpeg" alt="MacroMuse meal log" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">Meal Log</span>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
+          <div class="carousel-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+          </div>
+          <div class="carousel-counter">1 / 3</div>
+        </div>
+        <div class="project-thumb-overlay"><span>View Project →</span></div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-tag">React</span>
+          <span class="project-tag">AI / Claude API</span>
+          <span class="project-tag">Nutrition Tracker</span>
+        </div>
+        <h3 class="project-title">MacroMuse: Your Personal AI Dietitian</h3>
+        <p class="project-desc">An AI nutrition tracker: snap a photo to log macros and calories, with a dashboard, hydration tracker, streak counter, and an AI Chef for recipe ideas.</p>
+        <p class="project-contribution"><strong>My work:</strong> Photo-based meal logging, nutrition dashboards, and the AI recipe interface.</p>
+<div class="project-links">
+<a href="https://macromuse.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="project-card" data-href="https://relaychatting.vercel.app" role="link" tabindex="0" aria-label="Relay Chat: AI-Powered Real-Time Messaging App">
+      <div class="project-thumb">
+        <div class="carousel" data-index="0">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img loading="eager" src="assets/r1.png" alt="Relay Chat login and unique username screen" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">Login</span>
+            </div>
+            <div class="carousel-slide">
+              <img loading="eager" src="assets/r2.png" alt="Relay Chat live messaging interface" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">Live Chat</span>
+            </div>
+            <div class="carousel-slide">
+              <img loading="eager" src="assets/r3.png" alt="Relay Chat AI message summary feature" style="width:100%;height:100%;object-fit:cover;">
+              <span class="carousel-slide-label">AI Summary</span>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
+          <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
+          <div class="carousel-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+          </div>
+          <div class="carousel-counter">1 / 3</div>
+        </div>
+        <div class="project-thumb-overlay"><span>View Project →</span></div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-tag">Real-Time Chat</span>
+          <span class="project-tag">AI / Summarization</span>
+          <span class="project-tag">PWA</span>
+        </div>
+        <h3 class="project-title">Relay Chat: AI-Powered Messaging App</h3>
+        <p class="project-desc">A real-time chat app with secure login, unique usernames, and live messaging between users, plus an AI assistant that summarizes conversations on the fly. Installable as a PWA for a native app-like experience.</p>
+        <p class="project-contribution"><strong>My work:</strong> Real-time messaging, username-based onboarding, and the AI conversation summary interface.</p>
+<div class="project-links">
+<a href="https://relaychatting.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -1387,135 +1545,6 @@
           <span class="skill-pill">Scenes</span>
           <span class="skill-pill">Signals</span>
           <span class="skill-pill">Physics</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-label fade-in">Projects</div>
-  <h2 class="section-title fade-in">Selected<br>Work</h2>
-  <div class="projects-grid fade-in">
-
-    <div class="project-card" data-href="https://github.com/visheshsingh123/koincentric" role="link" tabindex="0" aria-label="KoinCentric: Android Expense Tracker">
-  <div class="project-thumb">
-    <div class="carousel" data-index="0">
-      <div class="carousel-track">
-        <div class="carousel-slide" style="background:linear-gradient(135deg,#0f172a,#1e293b);padding:0;overflow:hidden">
-          <img loading="eager" src="assets/k1.png" alt="KoinCentric home dashboard" style="width:100%;height:100%;object-fit:cover;">
-          <span class="carousel-slide-label">Dashboard</span>
-        </div>
-        <div class="carousel-slide" style="background:linear-gradient(135deg,#0c1a2e,#112240);padding:0;overflow:hidden">
-          <img loading="eager" src="assets/k2.png" alt="KoinCentric app screens overview" style="width:100%;height:100%;object-fit:cover;">
-          <span class="carousel-slide-label">App Screens</span>
-        </div>
-      </div>
-      <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
-      <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
-      <div class="carousel-dots">
-        <div class="carousel-dot active"></div>
-        <div class="carousel-dot"></div>
-      </div>
-      <div class="carousel-counter">1 / 2</div>
-    </div>
-    <div class="project-thumb-overlay"><span>View Project →</span></div>
-  </div>
-  <div class="project-body">
-    <div class="project-meta">
-      <span class="project-tag">Kotlin</span>
-      <span class="project-tag">Jetpack Compose</span>
-      <span class="project-tag">Android</span>
-    </div>
-    <h3 class="project-title">KoinCentric: Android Expense Tracker</h3>
-    <p class="project-desc">A lightweight Android expense tracker built with Kotlin and Jetpack Compose, with quick-entry logging and categorized spending tracking.</p>
-    <div class="project-links">
-    </div>
-  </div>
-</div>
-
-<div class="project-card" data-href="https://macromuse.vercel.app" role="link" tabindex="0" aria-label="MacroMuse: AI-Powered Personal Dietitian">
-      <div class="project-thumb">
-        <div class="carousel" data-index="0">
-          <div class="carousel-track">
-            <div class="carousel-slide" style="background:linear-gradient(135deg,#0a1a14,#0d2318);padding:0;overflow:hidden">
-              <img loading="eager" src="assets/n1.jpeg" alt="MacroMuse product overview" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">Overview</span>
-            </div>
-            <div class="carousel-slide" style="background:linear-gradient(135deg,#091812,#0b1f16);padding:0;overflow:hidden">
-              <img loading="eager" src="assets/n2.jpeg" alt="MacroMuse dashboard" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">Dashboard</span>
-            </div>
-            <div class="carousel-slide" style="background:linear-gradient(135deg,#0a1a14,#0d2318);padding:0;overflow:hidden">
-              <img loading="eager" src="assets/n3.jpeg" alt="MacroMuse meal log" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">Meal Log</span>
-            </div>
-          </div>
-          <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
-          <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
-          <div class="carousel-dots">
-            <div class="carousel-dot active"></div>
-            <div class="carousel-dot"></div>
-            <div class="carousel-dot"></div>
-          </div>
-          <div class="carousel-counter">1 / 3</div>
-        </div>
-        <div class="project-thumb-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="project-tag">React</span>
-          <span class="project-tag">AI / Claude API</span>
-          <span class="project-tag">Nutrition Tracker</span>
-        </div>
-        <h3 class="project-title">MacroMuse: Your Personal AI Dietitian</h3>
-        <p class="project-desc">An AI nutrition tracker: snap a photo to log macros and calories, with a dashboard, hydration tracker, streak counter, and an AI Chef for recipe ideas.</p>
-        <div class="project-links">
-        </div>
-      </div>
-    </div>
-  
-
-
-    <div class="project-card" data-href="https://relaychatting.vercel.app" role="link" tabindex="0" aria-label="Relay Chat: AI-Powered Real-Time Messaging App">
-      <div class="project-thumb">
-        <div class="carousel" data-index="0">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img loading="eager" src="assets/r1.png" alt="Relay Chat login and unique username screen" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">Login</span>
-            </div>
-            <div class="carousel-slide">
-              <img loading="eager" src="assets/r2.png" alt="Relay Chat live messaging interface" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">Live Chat</span>
-            </div>
-            <div class="carousel-slide">
-              <img loading="eager" src="assets/r3.png" alt="Relay Chat AI message summary feature" style="width:100%;height:100%;object-fit:cover;">
-              <span class="carousel-slide-label">AI Summary</span>
-            </div>
-          </div>
-          <button class="carousel-btn carousel-btn-prev" aria-label="Previous">&#8592;</button>
-          <button class="carousel-btn carousel-btn-next" aria-label="Next">&#8594;</button>
-          <div class="carousel-dots">
-            <div class="carousel-dot active"></div>
-            <div class="carousel-dot"></div>
-            <div class="carousel-dot"></div>
-          </div>
-          <div class="carousel-counter">1 / 3</div>
-        </div>
-        <div class="project-thumb-overlay"><span>View Project →</span></div>
-      </div>
-      <div class="project-body">
-        <div class="project-meta">
-          <span class="project-tag">Real-Time Chat</span>
-          <span class="project-tag">AI / Summarization</span>
-          <span class="project-tag">PWA</span>
-        </div>
-        <h3 class="project-title">Relay Chat: AI-Powered Messaging App</h3>
-        <p class="project-desc">A real-time chat app with secure login, unique usernames, and live messaging between users, plus an AI assistant that summarizes conversations on the fly. Installable as a PWA for a native app-like experience.</p>
-        <div class="project-links">
         </div>
       </div>
     </div>
@@ -1728,6 +1757,7 @@
 
       card.addEventListener('click', openLink);
       card.addEventListener('keydown', function (e) {
+        if (e.target.closest('a, button')) return;
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.open(href, '_blank', 'noopener,noreferrer'); }
       });
     });
