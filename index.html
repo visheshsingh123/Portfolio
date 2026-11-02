@@ -294,84 +294,6 @@
 
   .hero-content { text-align: left; }
 
-  /* HERO PHOTO SLOT */
-  .hero-photo-slot {
-    position: relative;
-    width: 340px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex-shrink: 0;
-  }
-  .hero-photo-slot::before {
-    content: '';
-    position: absolute;
-    top: -10px; left: -10px;
-    width: 48px; height: 48px;
-    border-top: 2px solid var(--accent);
-    border-left: 2px solid var(--accent);
-    z-index: 2;
-    pointer-events: none;
-  }
-  .hero-photo-slot::after {
-    content: '';
-    position: absolute;
-    bottom: -10px; right: -10px;
-    width: 48px; height: 48px;
-    border-bottom: 2px solid var(--accent);
-    border-right: 2px solid var(--accent);
-    z-index: 2;
-    pointer-events: none;
-  }
-  .hero-photo-frame {
-    width: 100%; height: auto;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--bg2);
-  }
-  .hero-photo-frame::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    translate: 10px 10px;
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    z-index: -1;
-  }
-  .hero-photo-frame img {
-    width: 100%; height: auto;
-    aspect-ratio: 948 / 1037.85;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    filter: grayscale(20%);
-    transition: filter 0.4s;
-  }
-  .hero-photo-frame:hover img { filter: grayscale(0%); }
-  .hero-photo-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 1rem; background: var(--bg2);
-  }
-  .hero-photo-placeholder svg { width: 64px; height: 64px; stroke: var(--border); }
-  .hero-photo-placeholder span {
-    font-family: var(--mono); font-size: 0.65rem; color: var(--muted);
-    letter-spacing: 0.15em; text-transform: uppercase;
-  }
-  .hero-photo-label {
-    position: relative;
-    padding: 0.5rem 0.9rem;
-    background: rgba(30,29,27,0.82); backdrop-filter: blur(8px);
-    border-top: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .hero-photo-label span {
-    font-family: var(--mono); font-size: 0.6rem; color: var(--muted);
-    letter-spacing: 0.12em; text-transform: uppercase;
-  }
-
   /* HERO STAT GRID */
   .hero-stat-grid {
     display: grid;
@@ -1045,7 +967,7 @@
     .hero-name { order: 2; }
     .hero-role { order: 3; }
     .hero-sub { order: 4; }
-    .hero-photo-slot { order: 5; width: 100%; max-width: 320px; height: auto; margin: 0 auto; }
+    .hero-lanyard-slot { order: 5; width: 100%; max-width: 340px; margin: 0 auto; }
     .hero-cta { order: 6; }
     .hero-scroll-hint { display: none; }
   }
@@ -1137,6 +1059,8 @@
 
 </style>
 <script src="assets/mesh-drift.js" defer></script>
+<link rel="stylesheet" href="assets/lanyard.css">
+<script src="assets/lanyard.js" defer></script>
 </head>
 <body>
 <a class="floating-email" href="mailto:visheshsingh29537@gmail.com" aria-label="Send an email to Vishesh Singh" title="Send me an email">
@@ -1193,22 +1117,42 @@
       </div>
     </div>
 
-    <!-- photo -->
-    <div class="hero-photo-slot">
-      <div class="hero-photo-frame">
-        <img loading="eager" fetchpriority="high" src="d1.jpeg" alt="Vishesh Singh"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="hero-photo-placeholder" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          <span>your photo here</span>
-        </div>
-        <div class="hero-photo-label">
-          <span>vishesh singh</span>
+    <!-- Interactive personal lanyard -->
+    <div class="hero-lanyard-slot">
+      <div class="lanyard-scene">
+        <div class="lanyard-rail" aria-hidden="true"><i></i><i></i></div>
+        <div class="lanyard-pendulum">
+          <div class="lanyard-ring" aria-hidden="true"></div>
+          <div class="lanyard-strap" aria-hidden="true"><span>FORMIQBLOOM · CREATE WITH INTENT</span></div>
+          <div class="lanyard-reel" aria-hidden="true"><span>vs.</span></div>
+          <div class="lanyard-clip" aria-hidden="true"></div>
+          <button class="lanyard-badge" type="button" aria-label="Flip Vishesh Singh’s ID badge" aria-pressed="false" aria-describedby="lanyard-hint">
+            <span class="lanyard-card">
+              <span class="lanyard-face lanyard-front">
+                <span class="lanyard-band"><span>FORMIQBLOOM</span><span>↗</span></span>
+                <span class="lanyard-hole" aria-hidden="true"></span>
+                <span class="lanyard-avatar"><img src="d1.jpeg" alt="" width="96" height="96" draggable="false" fetchpriority="high"><span aria-hidden="true">VS</span></span>
+                <span class="lanyard-name">Vishesh Singh<span class="lanyard-role">Developer &amp; Designer</span></span>
+                <span class="lanyard-team">FOUNDER · FORMIQBLOOM</span>
+                <span class="lanyard-status"><i></i> Open to opportunities</span>
+                <span class="lanyard-footer"><span class="lanyard-barcode" aria-hidden="true"></span><span>SURAT, INDIA <b>VS / 001</b></span></span>
+              </span>
+              <span class="lanyard-face lanyard-back" aria-hidden="true" inert>
+                <span class="lanyard-band"><span>BEHIND THE BADGE</span><span>↗</span></span>
+                <span class="lanyard-hole" aria-hidden="true"></span>
+                <span class="lanyard-back-content">
+                  <span class="lanyard-monogram">vs<span>.</span></span>
+                  <span class="lanyard-name">Vishesh Singh</span>
+                  <span class="lanyard-bio">IT student. Design-minded.<br>Code-driven.<br><br>Building websites, Android apps &amp; AI-powered tools with thoughtful interfaces.</span>
+                  <span class="lanyard-tags"><span>Web &amp; App</span><span>UI/UX</span><span>Java</span></span>
+                  <span class="lanyard-back-note">LET’S BUILD SOMETHING GOOD. ↗</span>
+                </span>
+              </span>
+            </span>
+          </button>
         </div>
       </div>
+      <p class="lanyard-hint" id="lanyard-hint"><span aria-hidden="true">↔</span> Drag to swing <span class="lanyard-hint-dot">·</span> Click to flip</p>
 
       <div class="hero-stat-grid">
         <article><p>Projects</p><h3>6+</h3></article>
