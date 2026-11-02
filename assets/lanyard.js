@@ -6,7 +6,7 @@
   const front = badge.querySelector('.lanyard-front');
   const back = badge.querySelector('.lanyard-back');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const rest = -5;
+  const rest = 0;
   let angle = rest, velocity = 0, stretch = 0, target = rest;
   let pointer = null, moved = false, suppressClick = false;
   let startX = 0, startY = 0, frame = 0, lastTime = 0;
@@ -25,7 +25,10 @@
     render();
     if (Math.abs(angle - destination) > .015 || Math.abs(velocity) > .025 || stretch > .05) {
       frame = requestAnimationFrame(tick);
-    } else { frame = 0; lastTime = 0; }
+    } else {
+      angle = destination; velocity = 0; stretch = 0;
+      render(); frame = 0; lastTime = 0;
+    }
   }
   function wake() {
     if (reducedMotion.matches) { angle = rest; velocity = stretch = 0; render(); return; }
@@ -85,7 +88,6 @@
     if (reducedMotion.matches) { cancelAnimationFrame(frame); frame = 0; lastTime = 0; }
     wake();
   });
-  // A brief settling motion suggests that the badge can be picked up.
-  angle = reducedMotion.matches ? rest : 4;
-  render(); wake();
+  // Hang straight until the visitor interacts.
+  render();
 })();
