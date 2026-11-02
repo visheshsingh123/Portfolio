@@ -42,17 +42,15 @@
 .lanyard-tags > span { padding: 4px 6px; border: 1px solid #bfb5a4; border-radius: 10px; font: 400 8px/1 var(--mono); }
 .lanyard-back-note { display: block; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #aaa292; font: 400 7px/1.5 var(--mono); letter-spacing: .6px; }
 @media (max-width: 1000px) {
-  /* Clip the endless strap locally so it never crosses the stacked hero copy. */
-  .hero-lanyard-slot { width: 100%; margin-top: 0; }
-  .lanyard-scene { height: 580px; clip-path: inset(0 -50vw -30px); }
-  .lanyard-pendulum { top: 0; left: calc(50% - 122px); scale: 1; }
+  /* First in the hero: let the strap continue behind the navbar to the top edge. */
+  .hero-lanyard-slot { --lanyard-scale: 1; width: 100%; margin-top: 0; }
+  .lanyard-scene { height: calc(518px * var(--lanyard-scale) + 10px); }
+  .lanyard-pendulum { top: 0; left: calc(50% - 122px); scale: var(--lanyard-scale); }
 }
 @media (max-width: 380px) {
-  .lanyard-scene { height: 500px; }
-  .lanyard-pendulum { scale: .86; }
+  .hero-lanyard-slot { --lanyard-scale: .86; }
 }
 @media (max-width: 340px) {
-  .lanyard-scene { height: 450px; }
-  .lanyard-pendulum { scale: .78; }
+  .hero-lanyard-slot { --lanyard-scale: .78; }
 }
 @media (prefers-reduced-motion: reduce) { .lanyard-card { transition: none; } }
