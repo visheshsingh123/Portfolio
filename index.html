@@ -294,29 +294,6 @@
 
   .hero-content { text-align: left; }
 
-  /* HERO STAT GRID */
-  .hero-stat-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-  }
-  .hero-stat-grid article {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 0.7rem 0.4rem;
-    text-align: center;
-    transition: border-color 0.25s;
-  }
-  .hero-stat-grid article:hover { border-color: rgba(235,94,40,0.4); }
-  .hero-stat-grid p {
-    font-family: var(--mono); font-size: 0.58rem; color: var(--muted);
-    letter-spacing: 0.1em; text-transform: uppercase; margin: 0;
-  }
-  .hero-stat-grid h3 {
-    font-family: var(--sans); font-weight: 700; font-size: 1rem;
-    color: var(--white); margin-top: 0.35rem;
-  }
-
   .hero-tag {
     display: inline-block;
     font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
@@ -1120,9 +1097,7 @@
     <!-- Interactive personal lanyard -->
     <div class="hero-lanyard-slot">
       <div class="lanyard-scene">
-        <div class="lanyard-rail" aria-hidden="true"><i></i><i></i></div>
         <div class="lanyard-pendulum">
-          <div class="lanyard-ring" aria-hidden="true"></div>
           <div class="lanyard-strap" aria-hidden="true"><span>FORMIQBLOOM · CREATE WITH INTENT</span></div>
           <div class="lanyard-reel" aria-hidden="true"><span>vs.</span></div>
           <div class="lanyard-clip" aria-hidden="true"></div>
@@ -1152,13 +1127,8 @@
           </button>
         </div>
       </div>
-      <p class="lanyard-hint" id="lanyard-hint"><span aria-hidden="true">↔</span> Drag to swing <span class="lanyard-hint-dot">·</span> Click to flip</p>
+      <p id="lanyard-hint" hidden>Drag to swing. Click or press Enter to flip. Press Escape to return to the front.</p>
 
-      <div class="hero-stat-grid">
-        <article><p>Projects</p><h3>6+</h3></article>
-        <article><p>Focus</p><h3>Web &amp; App</h3></article>
-        <article><p>Learning</p><h3>Java</h3></article>
-      </div>
     </div>
   </div>
 

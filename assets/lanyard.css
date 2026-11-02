@@ -1,15 +1,10 @@
-/* A single, personal version of the supplied lanyard rail. */
-.hero-lanyard-slot { width: 340px; position: relative; }
-.lanyard-scene { height: 476px; position: relative; perspective: 1000px; }
+/* An oversized badge suspended from a strap beyond the hero’s top edge. */
+.hero-lanyard-slot { width: 400px; position: relative; }
+.lanyard-scene { height: 550px; position: relative; perspective: 1000px; }
 .lanyard-scene::before { content: ''; position: absolute; inset: 90px -30px 0; background: radial-gradient(ellipse, #eb5e2812, transparent 68%); pointer-events: none; }
-.lanyard-rail { position: absolute; left: 22px; right: 22px; top: 12px; height: 9px; border-radius: 8px; background: linear-gradient(#8d8980, #e5e0d5 27%, #88847a 50%, #38352f 80%, #777166); box-shadow: 0 5px 8px #0006; }
-.lanyard-rail i { position: absolute; top: -5px; width: 13px; height: 19px; border-radius: 3px; background: linear-gradient(90deg, #514c44, #b7b0a2 40%, #666056 70%, #34312d); box-shadow: 0 2px 4px #0005; }
-.lanyard-rail i:first-child { left: 6px; }
-.lanyard-rail i:last-child { right: 6px; }
-.lanyard-pendulum { position: absolute; top: 17px; left: calc(50% - 122px); width: 244px; height: 432px; transform-origin: 50% 0; transform: rotate(-5deg); will-change: transform; }
-.lanyard-ring { position: absolute; left: 115px; top: -7px; width: 14px; height: 22px; border: 2px solid #b4ada3; border-radius: 50%; box-shadow: inset 1px 0 #fffcf2, 1px 1px 3px #0008; }
-.lanyard-strap { position: absolute; left: 109px; top: 8px; width: 26px; height: 111px; overflow: hidden; background: repeating-linear-gradient(0deg, #0000 0 2px, #0002 2px 3px), linear-gradient(90deg, #9f3615, #eb5e28 18%, #f17b48 50%, #d84d1a 83%, #9f3615); border: 1px solid #ef895b66; box-shadow: 3px 2px 6px #0004; }
-.lanyard-strap span { position: absolute; left: 7px; top: -28px; white-space: nowrap; writing-mode: vertical-rl; font: 700 8px/1 var(--mono); letter-spacing: 2px; color: #381d12; }
+.lanyard-pendulum { position: absolute; top: -65px; left: calc(50% - 122px); width: 244px; height: 432px; scale: 1.3; transform-origin: 50% 0; transform: rotate(-5deg); will-change: transform; }
+.lanyard-strap { position: absolute; left: 109px; top: -200vh; width: 26px; height: calc(200vh + 119px); overflow: hidden; background: repeating-linear-gradient(0deg, #0000 0 2px, #0002 2px 3px), linear-gradient(90deg, #9f3615, #eb5e28 18%, #f17b48 50%, #d84d1a 83%, #9f3615); border: 1px solid #ef895b66; box-shadow: 3px 2px 6px #0004; }
+.lanyard-strap span { position: absolute; left: 7px; bottom: 8px; white-space: nowrap; writing-mode: vertical-rl; font: 700 8px/1 var(--mono); letter-spacing: 2px; color: #381d12; }
 .lanyard-reel { position: absolute; top: 107px; left: 100px; width: 44px; height: 44px; z-index: 2; padding: 4px; border-radius: 50%; background: linear-gradient(130deg, #beb7a9, #5c574e 45%, #24221e 70%, #b9b0a0); box-shadow: 2px 4px 8px #0007; }
 .lanyard-reel span { display: grid; place-items: center; width: 100%; height: 100%; background: #262320; border: 1px solid #c2b9a44d; border-radius: 50%; font: 800 19px/1 var(--sans); color: #eb5e28; }
 .lanyard-clip { position: absolute; top: 146px; left: 112px; width: 20px; height: 35px; z-index: 3; border: 3px solid #b1aa9a; border-radius: 5px 5px 7px 7px; background: linear-gradient(90deg, #514c44, #e1dacc 35%, #6c665b 75%); box-shadow: 1px 2px 3px #0005; }
@@ -46,8 +41,18 @@
 .lanyard-tags { display: flex; gap: 4px; margin-top: 14px; }
 .lanyard-tags > span { padding: 4px 6px; border: 1px solid #bfb5a4; border-radius: 10px; font: 400 8px/1 var(--mono); }
 .lanyard-back-note { display: block; margin-top: 15px; padding-top: 10px; border-top: 1px dashed #aaa292; font: 400 7px/1.5 var(--mono); letter-spacing: .6px; }
-.lanyard-hint { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px 0 19px; color: var(--muted); font: 400 9px/1.5 var(--mono); letter-spacing: .2px; }
-.lanyard-hint > span:first-child { color: var(--accent); font-size: 16px; }
-.lanyard-hint-dot { opacity: .5; }
-@media (max-width: 1000px) { .hero-lanyard-slot { margin-top: 0; } }
+@media (max-width: 1000px) {
+  /* Clip the endless strap locally so it never crosses the stacked hero copy. */
+  .hero-lanyard-slot { width: 100%; margin-top: 0; }
+  .lanyard-scene { height: 550px; clip-path: inset(0 -50vw -30px); }
+  .lanyard-pendulum { top: 0; left: calc(50% - 158px); scale: 1.15; }
+}
+@media (max-width: 380px) {
+  .lanyard-scene { height: 488px; }
+  .lanyard-pendulum { scale: 1; }
+}
+@media (max-width: 340px) {
+  .lanyard-scene { height: 440px; }
+  .lanyard-pendulum { scale: .9; }
+}
 @media (prefers-reduced-motion: reduce) { .lanyard-card { transition: none; } }
